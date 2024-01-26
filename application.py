@@ -60,6 +60,11 @@ def index():
                     commentHead = 'No Comment Heading'
                 try:
                     comtag = commentbox.div.div.find_all('div', {'class': ''})
+                    if comtag:
+                        div_text = comtag[0].div.text
+                        custComment = div_text if div_text else 'No Comment'
+                    else:
+                            custComment = 'No Comment'
 
                     custComment = comtag[0].div.text
                 except Exception as e:
@@ -68,8 +73,8 @@ def index():
                 mydict = {"Product": searchString, "Name": name, "Rating": rating, "CommentHead": commentHead,
                           "Comment": custComment}
                 reviews.append(mydict)
-            #Mongodb connection using pwskills lab
-            client = pymongo.MongoClient("mongodb+srv://anubhavy600:R8mKCjJWRbreRtm@cluster0.pimgr3q.mongodb.net//?retryWrites=true&w=majority")
+            #Mongodb connection
+            client = pymongo.MongoClient("mongodb+srv://anubhavy600:R8mKCjJWRbreRtm@cluster0.pimgr3q.mongodb.net/?retryWrites=true&w=majority")
             db = client['review_scrap']
             review_col = db['review_scrap_data']
             review_col.insert_many(reviews)
