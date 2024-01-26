@@ -22,7 +22,7 @@ This is a simple web scraper built with Flask for extracting product reviews fro
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/flipkart-web-scraper.git
+    git clone https://github.com/your-username/web_scrapper.git
     cd flipkart-web-scraper
     ```
 
