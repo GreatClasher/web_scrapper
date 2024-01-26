@@ -49,7 +49,38 @@ This is a simple web scraper built with Flask for extracting product reviews fro
 
 3. Enter a product name in the search bar, and the application will display the extracted reviews.
 
-## Deployment
+## Deployment on AWS Elastic Beanstalk with CodePipeline
+
+### Prerequisites
+
+- [AWS CLI](https://aws.amazon.com/cli/)
+- [AWS Elastic Beanstalk CLI (EB CLI)](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
+- [AWS CodePipeline](https://aws.amazon.com/codepipeline/)
+
+### Steps
+
+1. **Configure AWS Elastic Beanstalk:**
+
+    - Create an Elastic Beanstalk environment with the appropriate settings.
+    - Ensure that the environment has the necessary environment variables (e.g., MongoDB connection string) configured.
+
+2. **Configure AWS CodePipeline:**
+
+    - Create a CodePipeline in the AWS Management Console.
+    - Configure the source stage to connect to your GitHub repository.
+    - Configure the build stage to use AWS CodeBuild or a custom build environment.
+    - Configure the deploy stage to deploy the application to Elastic Beanstalk.
+
+3. **Update AWS Elastic Beanstalk Configuration:**
+
+    - Ensure that your Elastic Beanstalk environment uses a Python runtime.
+    - Update the `requirements.txt` file with the necessary dependencies.
+    - Configure environment variables in the Elastic Beanstalk console or using configuration files.
+
+4. **Push Changes to GitHub:**
+
+    - Push any changes to your GitHub repository. This should trigger the CodePipeline to automatically deploy the updated application.
+
 
 This application is designed to be deployed on AWS Elastic Beanstalk using AWS CodePipeline. The source code is automatically deployed when changes are pushed to the main branch.
 
