@@ -1,6 +1,8 @@
 # Flipkart Web Scraper
 
 This is a simple web scraper built with Flask for extracting product reviews from Flipkart. It allows users to enter a search term, retrieves the product details from Flipkart, and then scrapes and displays customer reviews.
+![Web Scraper](https://i.ibb.co/5rMKt7D/your-image-file.jpg)
+
 
 ## Features
 
