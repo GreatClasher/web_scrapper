@@ -69,7 +69,7 @@ def index():
                           "Comment": custComment}
                 reviews.append(mydict)
             #Mongodb connection using pwskills lab
-            client = pymongo.MongoClient("mongodb+srv://anubhavy600:@cluster0.pimgr3q.mongodb.net//?retryWrites=true&w=majority")
+            client = pymongo.MongoClient("mongodb+srv://anubhavy600:R8mKCjJWRbreRtm@cluster0.pimgr3q.mongodb.net//?retryWrites=true&w=majority")
             db = client['review_scrap']
             review_col = db['review_scrap_data']
             review_col.insert_many(reviews)
